@@ -139,7 +139,6 @@ func _on_save_button():
 	_save_profile_data()
 	json_save_dialog.popup_centered()
 
-
 func _autosave():
 	_save_profile_data()
 	_save_system_data()

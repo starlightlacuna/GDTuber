@@ -214,11 +214,11 @@ text = "Save Data"
 layout_mode = 2
 text = "Load Data"
 
-[node name="FullScreen Toggle" type="Panel" parent="Menu/PanelContainer/SettingsMenu/VBoxContainer2/TopMenuItems"]
+[node name="BGTransparentToggle" type="Panel" parent="Menu/PanelContainer/SettingsMenu/VBoxContainer2/TopMenuItems"]
 custom_minimum_size = Vector2(0, 45)
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Menu/PanelContainer/SettingsMenu/VBoxContainer2/TopMenuItems/FullScreen Toggle"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Menu/PanelContainer/SettingsMenu/VBoxContainer2/TopMenuItems/BGTransparentToggle"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -226,14 +226,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Menu/PanelContainer/SettingsMenu/VBoxContainer2/TopMenuItems/FullScreen Toggle/HBoxContainer"]
+[node name="Label" type="Label" parent="Menu/PanelContainer/SettingsMenu/VBoxContainer2/TopMenuItems/BGTransparentToggle/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Transparent BG"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BGTransparentToggle" type="CheckBox" parent="Menu/PanelContainer/SettingsMenu/VBoxContainer2/TopMenuItems/FullScreen Toggle/HBoxContainer"]
+[node name="BGTransparentToggle" type="CheckBox" parent="Menu/PanelContainer/SettingsMenu/VBoxContainer2/TopMenuItems/BGTransparentToggle/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 6
@@ -478,6 +478,7 @@ use_native_dialog = true
 
 [node name="JSONSaveDialog" type="FileDialog" parent="."]
 unique_name_in_owner = true
+size = Vector2i(646, 180)
 access = 2
 filters = PackedStringArray("*.gdtuber,*.json")
 show_hidden_files = true
@@ -508,7 +509,7 @@ autostart = true
 [connection signal="pressed" from="Menu/PanelContainer/SettingsMenu/VBoxContainer2/TopMenuItems/Fullscreen" to="." method="_on_fullscreen_toggle"]
 [connection signal="pressed" from="Menu/PanelContainer/SettingsMenu/VBoxContainer2/TopMenuItems/Save Data" to="." method="_on_save_button"]
 [connection signal="pressed" from="Menu/PanelContainer/SettingsMenu/VBoxContainer2/TopMenuItems/Load Data" to="." method="_load_dialog"]
-[connection signal="toggled" from="Menu/PanelContainer/SettingsMenu/VBoxContainer2/TopMenuItems/FullScreen Toggle/HBoxContainer/BGTransparentToggle" to="." method="_toggle_transparent"]
+[connection signal="toggled" from="Menu/PanelContainer/SettingsMenu/VBoxContainer2/TopMenuItems/BGTransparentToggle/HBoxContainer/BGTransparentToggle" to="." method="_toggle_transparent"]
 [connection signal="color_changed" from="Menu/PanelContainer/SettingsMenu/VBoxContainer2/TopMenuItems/BackgroundColor/HBoxContainer/ColorPickerButton" to="." method="_change_background_color"]
 [connection signal="toggled" from="Menu/PanelContainer/SettingsMenu/VBoxContainer2/TopMenuItems/Fixed Window Size/HBoxContainer/CenterContainer/FixedWindowSizeToggle" to="." method="_on_fixed_window_button_toggled"]
 [connection signal="value_changed" from="Menu/PanelContainer/SettingsMenu/VBoxContainer2/TopMenuItems/WindowSize/VBoxContainer/HBoxContainer2/CenterContainer/fixedWindowWidthSpinbox" to="." method="_on_ws_lock_width_value_changed"]
